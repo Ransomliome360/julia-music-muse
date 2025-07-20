@@ -87,47 +87,43 @@ export const MusicPlayer = () => {
   return (
     <div className="min-h-screen bg-player-background text-foreground">
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen p-8">
         
         {/* Album Art Section */}
-        <div className="lg:w-1/2 relative flex items-center justify-center p-8">
-          <div className="relative group">
+        <div className="relative flex items-center justify-center mb-8">
+          <div className="relative">
             {/* Main Album Artwork */}
-            <div className="relative overflow-hidden rounded-3xl animate-float">
+            <div className="relative overflow-hidden rounded-3xl">
               <video
                 src={currentSong.artwork}
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-80 h-96 lg:w-96 lg:h-[30rem] object-cover shadow-2xl animate-pulse-glow"
+                className="w-80 h-96 lg:w-96 lg:h-[30rem] object-cover shadow-2xl"
                 style={{ aspectRatio: '3/4' }}
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse" />
-            <div className="absolute -top-4 -left-4 w-16 h-16 bg-accent/20 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
           </div>
         </div>
 
         {/* Song Info & Controls Section */}
-        <div className="lg:w-1/2 flex flex-col justify-between p-8">
+        <div className="max-w-md w-full space-y-8">
           
           {/* Song Information */}
-          <div className="space-y-6 animate-fade-in">
+          <div className="text-center space-y-4 animate-fade-in">
             <div className="space-y-2">
-              <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 {currentSong.title}
               </h1>
-              <p className="text-xl text-muted-foreground">{currentSong.artist}</p>
-              <p className="text-lg text-muted-foreground">{currentSong.album}</p>
+              <p className="text-lg text-muted-foreground">{currentSong.artist}</p>
+              <p className="text-base text-muted-foreground">{currentSong.album}</p>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center gap-4">
               <Button
                 variant={isLiked ? "default" : "outline"}
                 size="sm"
