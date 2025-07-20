@@ -93,15 +93,14 @@ export const MusicPlayer = () => {
         <div className="relative flex items-center justify-center mb-8">
           <div className="relative">
             {/* Main Album Artwork */}
-            <div className="relative overflow-hidden rounded-3xl">
+            <div className="relative overflow-hidden">
               <video
                 src={currentSong.artwork}
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-80 h-96 lg:w-96 lg:h-[30rem] object-cover shadow-2xl"
-                style={{ aspectRatio: '3/4' }}
+                className="w-[270px] h-[360px] lg:w-[324px] lg:h-[432px] object-cover shadow-2xl"
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
