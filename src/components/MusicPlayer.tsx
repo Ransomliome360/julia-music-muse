@@ -13,7 +13,7 @@ import {
   Heart,
   MoreHorizontal 
 } from "lucide-react";
-import mainAlbum from "@/assets/julia-main-album.jpg";
+import tallAnimatedArtwork from "@/assets/tall_animated_artwork.mp4";
 
 interface Song {
   id: number;
@@ -31,7 +31,7 @@ const demoSongs: Song[] = [
     artist: "Julia Michaels",
     album: "Nervous System",
     duration: "2:58",
-    artwork: mainAlbum
+    artwork: tallAnimatedArtwork
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const demoSongs: Song[] = [
     artist: "Julia Michaels",
     album: "Inner Monologue Part 1",
     duration: "3:22",
-    artwork: mainAlbum
+    artwork: tallAnimatedArtwork
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const demoSongs: Song[] = [
     artist: "Julia Michaels ft. Selena Gomez",
     album: "Inner Monologue Part 1", 
     duration: "3:26",
-    artwork: mainAlbum
+    artwork: tallAnimatedArtwork
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const demoSongs: Song[] = [
     artist: "Julia Michaels ft. Niall Horan",
     album: "Inner Monologue Part 1",
     duration: "3:04",
-    artwork: mainAlbum
+    artwork: tallAnimatedArtwork
   },
   {
     id: 5,
@@ -63,7 +63,7 @@ const demoSongs: Song[] = [
     artist: "Julia Michaels",
     album: "Nervous System",
     duration: "3:15",
-    artwork: mainAlbum
+    artwork: tallAnimatedArtwork
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ const demoSongs: Song[] = [
     artist: "Julia Michaels",
     album: "Not in Chronological Order",
     duration: "2:45",
-    artwork: mainAlbum
+    artwork: tallAnimatedArtwork
   }
 ];
 
@@ -94,9 +94,12 @@ export const MusicPlayer = () => {
           <div className="relative group">
             {/* Main Album Artwork */}
             <div className="relative overflow-hidden rounded-3xl animate-float">
-              <img
+              <video
                 src={currentSong.artwork}
-                alt={currentSong.album}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-80 h-96 lg:w-96 lg:h-[30rem] object-cover shadow-2xl animate-pulse-glow"
                 style={{ aspectRatio: '3/4' }}
               />
@@ -211,9 +214,12 @@ export const MusicPlayer = () => {
             >
               <div className="flex items-center gap-4">
                 <div className="relative">
-                  <img
+                  <video
                     src={song.artwork}
-                    alt={song.album}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-12 h-12 rounded-lg object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/40 transition-colors duration-300" />
